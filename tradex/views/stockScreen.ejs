@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+<%- include('partials/nav.ejs',{userFund:userFund}); %>
+<%- include('partials/sidebar.ejs',{userName:userName}); %>
+
+<section>
+    <section class="main-content">
+        <div class="row">
+        <div class="col-md-9">
+
+          
+
+
+<!-- # 3 Chart -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-collapse">
+                <div class="panel-body">
+                    <h4><%=stockName%></h4>
+                    <h6><%=LTP%></h6>
+                    <input type="number" value="<%=LTP%>" id="stock_LTP" style="display:none;">
+                    <div id="candlestickChart" class="h-500">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- # 3 Chart -->
+
+
+
+
+<%- include('partials/buyOrder.ejs',{stockID:stockID}); %>
+
+
+<%- include('partials/sellOrder.ejs',{stockID:stockID}); %>
+
+<%- include('partials/marketOrder.ejs',{buyOrders:buyOrders,sellOrders:sellOrders}); %>
+
+<%- include('partials/footer') %>
